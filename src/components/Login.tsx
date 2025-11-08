@@ -12,8 +12,7 @@ import { TextField, Button, Stack, Alert, Typography } from "@mui/material";
         password should be queried twice to ensure no typos... etc. etc.
 */
 
-// STUDENT NOTE: This component is my extracted version of Login from TicTacToe.tsx, like teacher asked.
-// STUDENT NOTE: I changed the password field to type="password" so it's not shown in plain text.
+// I changed the password field to type="password" so it's not shown in plain text.
 
 interface LoginProps {
         config: any;
@@ -27,7 +26,6 @@ const Login: React.FC<LoginProps> = ({ config, onLoginSuccess, onLoginFail }) =>
         const [error, setError] = React.useState<string | null>(null);
 
         function confirmSession(j: any) {
-                // This mirrors teacher's confirmSession logic in TicTacToe.tsx:
                 // if (j.success) view="game", else view="login"
                 if (j.success) {
                         onLoginSuccess(email);
@@ -47,7 +45,6 @@ const Login: React.FC<LoginProps> = ({ config, onLoginSuccess, onLoginFail }) =>
 
         function getSession() {
                 const obu = { email: email, pass: pass };
-                // STUDENT NOTE: using teacher's pattern:
                 // fetch(c.serviceroot+c.login, { method:"POST", mode:"cors", credentials:"include",
                 //                                headers:{'Content-Type':'text/plain'}, body: JSON.stringify(obu) })
 
@@ -77,15 +74,14 @@ const Login: React.FC<LoginProps> = ({ config, onLoginSuccess, onLoginFail }) =>
                         <TextField
                                 onChange={(e) => setPass(e.target.value)}
                                 label="Password"
-                                type="password" // STUDENT NOTE: hide password per teacher's guidance
+                                type="password" //   hide password
                         />
 
                         <Button variant="contained" onClick={getSession}>
                                 Sign in
                         </Button>
 
-                        {/* STUDENT NOTE:
-                           Teacher's original login auto-created new accounts. We're moving
+                        {/* to original login auto-created new accounts. We're moving
                            that behavior to a dedicated Register view instead, which is what
                            they asked us to do ("Registration needs it's own view").
                         */}

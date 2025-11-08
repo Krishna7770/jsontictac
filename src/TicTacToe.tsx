@@ -3,7 +3,6 @@ import type { Dispatch, JSX, SetStateAction } from 'react';
 import Layout from './components/Layout';
 import type { ViewName } from './components/Layout';
 
-// STUDENT NOTE: These are new components we created to satisfy teacher exercises.
 //import Layout, { ViewName } from './components/Layout';
 import Login from './components/Login';
 import Register from './components/Register';
@@ -78,13 +77,13 @@ import Game from './components/Game';
 
 function TicTacToe(props : any)
 {
-        // STUDENT NOTE:
-        // In the teacher's original file, view logic and login UI lived all inside TicTacToe.
+       
+        //  original file, view logic and login UI lived all inside TicTacToe.
         // Exercise 2 said: "Separate Login into it's own component file" and add Register etc.
         // So now TicTacToe tracks global app state and chooses which screen to show.
 
         // This holds which "page/view" the user is currently looking at.
-        // The allowed values match teacher's BIG EXERCISE list.
+        
         const [currentView, setCurrentView] = React.useState<ViewName>(props.view ?? "login");
 
         // This holds which user is currently logged in (by email). If null => not logged in.
@@ -93,7 +92,7 @@ function TicTacToe(props : any)
         // We'll need config (serviceroot, endpoints, etc.) for API calls.
         const config = props.config;
 
-        // STUDENT NOTE:
+        // 
         // In the original code, confirmSession() set the view = "game" on success,
         // and set it back to "login" on failure.
         // We keep that behavior conceptually, but we handle it here via callbacks
@@ -103,7 +102,7 @@ function TicTacToe(props : any)
         {
                 setCurrentUser(email);
 
-                // Teacher mentioned that we should eventually have a "lobby" between login and the game,
+                //as mentioned that we should eventually have a "lobby" between login and the game,
                 // not jump straight into the board. So instead of sending user directly into "game",
                 // we land them in "lobby". The user can then navigate to Game from the top bar.
                 setCurrentView("lobby");
@@ -116,7 +115,7 @@ function TicTacToe(props : any)
                 setCurrentView("login");
         }
 
-        // STUDENT NOTE:
+        //  
         // Registration is "its own view" instead of silently creating a user in login.php.
         // After successful register, we are basically logged in (the PHP puts uid in session).
         function handleRegisterSuccess(email: string)
@@ -131,8 +130,7 @@ function TicTacToe(props : any)
                 setCurrentView("register");
         }
 
-        // STUDENT NOTE:
-        // Teacher warned that logout MUST also contact server so uid in PHP session is cleared,
+       
         // otherwise another person at the same browser could act as previous user.
         function logout()
         {
@@ -199,7 +197,7 @@ function TicTacToe(props : any)
                         break;
         }
 
-        // STUDENT NOTE:
+        //  
         // Layout is the always-visible top bar / sidebar requested in BIG EXERCISE.
         // It shows whether we're logged in and gives navigation buttons.
         // We pass currentUser to show "Logged in as ...".

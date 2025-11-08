@@ -1,7 +1,7 @@
 import React from "react";
 import { TextField, Button, Stack, Alert, Typography } from "@mui/material";
 
-// STUDENT NOTE: Teacher said registration should NOT happen silently in login.
+//    as said registration should NOT happen silently in login.
 // We create a dedicated Register component,
 // which will POST to register.php on the server side.
 

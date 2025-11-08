@@ -1,8 +1,7 @@
 import React from "react";
 import { AppBar, Toolbar, Typography, Button, Box } from "@mui/material";
 
-// STUDENT NOTE: This component is new. It did not exist in teacher's original code.
-// Teacher asked for a constant top/side bar that shows login state and allows navigation.
+// as asked for a constant top/side bar that shows login state and allows navigation.
 
 export type ViewName = "login" | "register" | "lobby" | "game";
 

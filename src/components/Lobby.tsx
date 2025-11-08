@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography } from "@mui/material";
 
-// STUDENT NOTE: Teacher said that after login we shouldn't just dump user straight into game;
+// as said that after login we shouldn't just dump user straight into game;
 // we will likely have a lobby or some "home" area. This is that placeholder.
 
 const Lobby: React.FC = () => {
